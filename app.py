@@ -6,10 +6,16 @@ from models.linearRegression import regresion
 import pytesseract
 from pydantic import BaseModel
 from models.OCR import OCR
-
+import os
 
 app = FastAPI()
 
+port = int(os.environ.get("PORT", 8000))
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=port)
+                
 def connect_db(): 
     conn = sqlite3.connect('/db/empresa.db')
     try: 
