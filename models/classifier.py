@@ -345,7 +345,7 @@ def crear_query(categoria: str, departamento: str, titulo: str, ciudad: str, tip
 
         elif tipo_estadistica == "promedio" or tipo_estadistica == "media":
             query = f'SELECT AVG({caso}) FROM empleados'
-        elif tipo_estadistica is "mediana":
+        elif tipo_estadistica == "mediana":
             query = query = f'''
             SELECT {caso} as mediana FROM empleados 
             ORDER BY {caso} 
